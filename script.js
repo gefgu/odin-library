@@ -7,8 +7,10 @@ function Book(title, author, numberOfPages, readingDone) {
 
 let library = [];
 
-function addBookToLibrary(book) {
-  library.push(book);
+function addBookToLibrary(event) {
+  event.preventDefault()
+  console.log(this);
+  console.log(event);
 }
 
 function displayLibrary() {
@@ -43,10 +45,13 @@ function cleanDisplay() {
 
 
 const container = document.querySelector(".container");
+const bookForm = document.querySelector("form");
 
-addBookToLibrary(new Book("The Final Empire", "Brandon Sanderson", 541, true));
-addBookToLibrary(
+library.push(new Book("The Final Empire", "Brandon Sanderson", 541, true));
+library.push(
   new Book("The Well of Ascension", "Brandon Sanderson", 590, true)
 );
-addBookToLibrary(new Book("The Hero of Ages", "Brandon Sanderson", 572, false));
+library.push(new Book("The Hero of Ages", "Brandon Sanderson", 572, false));
 displayLibrary();
+
+bookForm.addEventListener("submit", addBookToLibrary);
