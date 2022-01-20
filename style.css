@@ -38,4 +38,8 @@ body {
   border-radius: 16px;
   padding: 16px;
   box-shadow: 1px 1px #14213d;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 250px;
 }
