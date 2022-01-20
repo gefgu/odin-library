@@ -1,16 +1,27 @@
+* {
+  font-family: Helvetica, sans-serif;
+}
+
 body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .container {
-    display: flex;
-    width: 75%;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 64px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+}
+
+.book-card {
+  background-color: #e5e5e5;
+  border: 1px solid #14213d;
+  border-radius: 16px;
+  padding: 16px;
 }
