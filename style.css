@@ -52,3 +52,20 @@ body {
   text-align: center;
   width: 250px;
 }
+
+.new-book-form {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  display: none;
+  background-color: #14213d;
+  color: white;
+}
+
+.new-book-form.active {
+  display: block;
+}

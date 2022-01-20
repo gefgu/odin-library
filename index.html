@@ -16,5 +16,38 @@
     <div class="main">
       <div class="container"></div>
     </div>
+    <div class="new-book-form active">
+      <h3>Add New Book</h3>
+      <form>
+        <div>
+          <label for="name">Book Name</label><br />
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div>
+          <label for="author">Author Name</label><br />
+          <input type="text" name="author" id="author" required />
+        </div>
+        <div>
+          <label for="pages">Number of pages</label><br />
+          <input type="number" name="pages" id="pages" required />
+        </div>
+        <div>
+          <p>Reading Status</p>
+          <div>
+            <div>
+              <label for="status-read">Read</label><br />
+              <input type="radio" name="status-read" value="status-read" id="status" required />
+            </div>
+            <div>
+              <label for="status-read">Not Read Yet</label><br />
+              <input type="radio" name="status-read" value="status-read" id="status" required />
+            </div>
+          </div>
+        </div>
+        <div>
+          <input type="submit" value="Subscribe!" />
+        </div>
+      </form>
+    </div>
   </body>
 </html>
