@@ -1,13 +1,26 @@
 * {
-  font-family: Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
   margin: 0;
+}
+
+.header {
+  padding: 16px 32px;
+  background-color: #14213d;
+  color: #ffffff;
+}
+
+.header * {
+    margin: 0;
+}
+
+.main {
   display: flex;
+  min-height: 75vh;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 
 .container {
