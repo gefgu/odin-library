@@ -37,4 +37,5 @@ body {
   border: 1px solid #14213d;
   border-radius: 16px;
   padding: 16px;
+  box-shadow: 1px 1px #14213d;
 }
