@@ -1,5 +1,5 @@
 * {
-  font-family: Helvetica, Arial, sans-serif;;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .container {
@@ -18,16 +18,16 @@
 }
 
 .container a {
-  color: #1EAEDB;
+  color: #1eaedb;
 }
 
 #add-button {
   margin-top: 16px;
   padding: 8px 24px;
-  background-color: #33C3F0;
-  border-color: #33C3F0;
+  background-color: #33c3f0;
+  border-color: #33c3f0;
   border-radius: 4px;
-  color: #FFF;
+  color: #fff;
   font-weight: 700;
 }
 
@@ -47,7 +47,9 @@
   text-align: left;
 }
 
-.library tr td, .library th {
+.library tr td,
+.library th {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   padding: 16px;
 }
+

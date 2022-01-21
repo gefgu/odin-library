@@ -12,7 +12,7 @@ function displayLibrary() {
   // create table data with book author
   // create table data with book number of pages
   // create table data with book status
-  library.forEach(book => {
+  library.forEach((book) => {
     const row = document.createElement("tr");
     const titleElement = document.createElement("td");
     const authorElement = document.createElement("td");
