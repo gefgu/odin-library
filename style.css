@@ -21,22 +21,6 @@
   color: #1eaedb;
 }
 
-#add-button {
-  margin-top: 16px;
-  padding: 8px 24px;
-  background-color: #33c3f0;
-  border-color: #33c3f0;
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: 700;
-}
-
-#add-button:hover {
-  background-color: #2cb4dd;
-  border-color: #2cb4dd;
-}
-
 .library {
   margin-top: 48px;
   width: 100%;
@@ -111,10 +95,10 @@
   font-size: 24px;
 }
 
+#add-button,
 .delete-button,
 .status-button {
   padding: 16px 24px 12px;
-  
   border-radius: 4px;
   letter-spacing: 1px;
   font-size: 12px;
@@ -130,4 +114,18 @@
 .status-button {
   border: 1px solid grey;
   background-color: white;
+}
+
+#add-button {
+  margin-top: 16px;
+  background-color: #33c3f0;
+  border-color: #33c3f0;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+}
+
+#add-button:hover {
+  background-color: #2cb4dd;
+  border-color: #2cb4dd;
 }
