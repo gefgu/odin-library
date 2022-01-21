@@ -35,3 +35,19 @@
   background-color: #2cb4dd;
   border-color: #2cb4dd;
 }
+
+.library {
+  margin-top: 48px;
+  width: 100%;
+  font-size: 18px;
+  border-collapse: collapse;
+}
+
+.library th {
+  text-align: left;
+}
+
+.library tr td, .library th {
+  border-bottom: 1px solid #000000;
+  padding: 16px;
+}
