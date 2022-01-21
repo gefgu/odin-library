@@ -53,3 +53,44 @@
   padding: 16px;
 }
 
+.new-book-form {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding: 24px;
+  width: 350px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.4);
+}
+
+.new-book-form input, .new-book-form select {
+  margin-bottom: 24px;
+  font-size: 18px;
+  padding: 16px;
+  background-color: #f4f4f4;
+  border: none;
+  line-height: 1.5em;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.new-book-form label {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.new-book-form h3 {
+  font-size: 48px;
+  text-align: center;
+}
+
+#submit {
+  margin-bottom: 0;
+  padding: 16px 8px;
+  background-color: #33c3f0;
+  color: white;
+  font-size: 24px;
+}
