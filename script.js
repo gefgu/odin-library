@@ -35,6 +35,7 @@ let library = [];
 const libraryTableBody = document.querySelector(".library tbody");
 const bookForm = document.querySelector(".new-book-form");
 const addButton = document.querySelector("#add-button");
+const exitButton = document.querySelector(".exit");
 
 library.push(new Book("The Final Empire", "Brandon Sanderson", 541, true));
 library.push(new Book("The Well of Ascension", "Brandon Sanderson", 590, true));
@@ -44,3 +45,8 @@ displayLibrary();
 addButton.addEventListener("click", () => {
   bookForm.classList.add("active");
 });
+
+exitButton.addEventListener("click", () => {
+  bookForm.classList.remove("active");
+  bookForm.reset();
+})

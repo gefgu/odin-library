@@ -88,9 +88,19 @@
   letter-spacing: 1px;
 }
 
+.exit {
+  width: 25px;
+  text-align: center;
+  margin-left: auto;
+  font-size: 24px;
+  padding: 4px 4px 0px 4px;
+  border: 1px solid red;
+}
+
 .new-book-form h3 {
   font-size: 48px;
   text-align: center;
+  margin-top: 16px;
 }
 
 #submit {
