@@ -1,8 +1,12 @@
-function Book(title, author, numberOfPages, readingDone) {
+function Book(title, author, numberOfPages, read) {
   this.title = title;
   this.author = author;
   this.numberOfPages = numberOfPages;
-  this.readingDone = readingDone;
+  this.read = read;
+}
+
+Book.prototype.toggleStatus = function() {
+  this.read = !this.read;
 }
 
 function displayLibrary() {
@@ -16,6 +20,7 @@ function addBookToDisplay(book, index) {
   const authorElement = document.createElement("td");
   const numberOfPagesElement = document.createElement("td");
   const statusElement = document.createElement("td");
+  const statusButton = document.createElement("button");
   const deleteElement = document.createElement("td");
   const deleteButton = document.createElement("button");
 
@@ -24,9 +29,13 @@ function addBookToDisplay(book, index) {
   titleElement.textContent = book.title;
   authorElement.textContent = book.author;
   numberOfPagesElement.textContent = book.numberOfPages;
-  statusElement.textContent = book.readingDone ? "READ" : "NOT READ";
-  deleteButton.textContent = "DELETE";
 
+  statusButton.textContent = book.read ? "READ" : "NOT READ";
+  statusButton.classList.add("status-button");
+  statusButton.addEventListener("click", toggleBookStatus);
+  statusElement.appendChild(statusButton);
+
+  deleteButton.textContent = "DELETE";
   deleteButton.classList.add("delete-button");
   deleteButton.addEventListener("click", removeBookFromLibrary);
   deleteElement.appendChild(deleteButton);
@@ -50,6 +59,12 @@ function addBookToLibrary(event) {
   addBookToDisplay(book, library.push(book) - 1);
   this.reset();
   this.classList.remove("active");
+}
+
+function toggleBookStatus() {
+  const index = this.parentNode.parentNode.dataset.index;
+  library[index].toggleStatus();
+  displayLibrary();
 }
 
 function removeBookFromLibrary() {
