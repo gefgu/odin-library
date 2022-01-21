@@ -1,0 +1,37 @@
+* {
+  font-family: Helvetica, Arial, sans-serif;;
+}
+
+.container {
+  padding: 64px;
+}
+
+.container h1 {
+  font-size: 48px;
+  font-weight: 200;
+  margin-bottom: 16px;
+}
+
+.container > p {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.container a {
+  color: #1EAEDB;
+}
+
+#add-button {
+  margin-top: 16px;
+  padding: 8px 24px;
+  background-color: #33C3F0;
+  border-color: #33C3F0;
+  border-radius: 4px;
+  color: #FFF;
+  font-weight: 700;
+}
+
+#add-button:hover {
+  background-color: #2cb4dd;
+  border-color: #2cb4dd;
+}
