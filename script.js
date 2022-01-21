@@ -6,24 +6,33 @@ function Book(title, author, numberOfPages, readingDone) {
 }
 
 function displayLibrary() {
-  library.forEach((book) => addBookToDisplay(book));
+  library.forEach((book, index) => addBookToDisplay(book, index));
 }
 
-function addBookToDisplay(book) {
+function addBookToDisplay(book, index) {
   const row = document.createElement("tr");
   const titleElement = document.createElement("td");
   const authorElement = document.createElement("td");
   const numberOfPagesElement = document.createElement("td");
   const statusElement = document.createElement("td");
+  const deleteElement = document.createElement("td");
+  const deleteButton = document.createElement("button");
+
+  row.dataset.index = index;
 
   titleElement.textContent = book.title;
   authorElement.textContent = book.author;
   numberOfPagesElement.textContent = book.numberOfPages;
   statusElement.textContent = book.readingDone ? "READ" : "NOT READ";
+  deleteButton.textContent = "DELETE";
+  deleteButton.classList.add("delete-button");
+
+  deleteElement.appendChild(deleteButton);
   row.appendChild(titleElement);
   row.appendChild(authorElement);
   row.appendChild(numberOfPagesElement);
   row.appendChild(statusElement);
+  row.appendChild(deleteElement);
   libraryTableBody.appendChild(row);
 }
 
@@ -35,8 +44,7 @@ function addBookToLibrary(event) {
     +this.elements.pages.value,
     this.elements.status.value === "true" ? true : false,
   );
-  library.push(book);
-  addBookToDisplay(book);
+  addBookToDisplay(book, library.push(book) - 1);
   this.reset();
   this.classList.remove("active");
 }
