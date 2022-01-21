@@ -27,6 +27,20 @@ function addBookToDisplay(book) {
   libraryTableBody.appendChild(row);
 }
 
+function addBookToLibrary(event) {
+  event.preventDefault();
+  const book = new Book(
+    this.elements.title.value,
+    this.elements.author.value,
+    +this.elements.pages.value,
+    this.elements.status.value === "true" ? true : false,
+  );
+  library.push(book);
+  addBookToDisplay(book);
+  this.reset();
+  this.classList.remove("active");
+}
+
 let library = [];
 const libraryTableBody = document.querySelector(".library tbody");
 const bookForm = document.querySelector(".new-book-form");
@@ -41,6 +55,7 @@ displayLibrary();
 addButton.addEventListener("click", () => {
   bookForm.classList.add("active");
 });
+bookForm.addEventListener("submit", addBookToLibrary);
 
 exitButton.addEventListener("click", () => {
   bookForm.classList.remove("active");
