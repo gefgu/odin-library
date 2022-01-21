@@ -33,9 +33,14 @@ function displayLibrary() {
 
 let library = [];
 const libraryTableBody = document.querySelector(".library tbody");
+const bookForm = document.querySelector(".new-book-form");
+const addButton = document.querySelector("#add-button");
 
 library.push(new Book("The Final Empire", "Brandon Sanderson", 541, true));
 library.push(new Book("The Well of Ascension", "Brandon Sanderson", 590, true));
 library.push(new Book("The Hero of Ages", "Brandon Sanderson", 572, false));
 
 displayLibrary();
+addButton.addEventListener("click", () => {
+  bookForm.classList.add("active");
+});

@@ -26,7 +26,8 @@
   padding: 8px 24px;
   background-color: #33c3f0;
   border-color: #33c3f0;
-  border-radius: 4px;
+  border: none;
+  border-radius: 8px;
   color: #fff;
   font-weight: 700;
 }
@@ -64,6 +65,11 @@
   padding: 24px;
   width: 350px;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+.new-book-form.active {
+  display: block;
 }
 
 .new-book-form input, .new-book-form select {
