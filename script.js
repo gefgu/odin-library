@@ -28,7 +28,6 @@ function addBookToDisplay(book, index) {
   deleteButton.textContent = "DELETE";
 
   deleteButton.classList.add("delete-button");
-  deleteButton.dataset.index = index;
   deleteButton.addEventListener("click", removeBookFromLibrary);
   deleteElement.appendChild(deleteButton);
 
@@ -54,7 +53,7 @@ function addBookToLibrary(event) {
 }
 
 function removeBookFromLibrary() {
-  const index = this.dataset.index;
+  const index = this.parentNode.parentNode.dataset.index;
   library.splice(index, 1);
   displayLibrary();
 }
