@@ -6,6 +6,7 @@ function Book(title, author, numberOfPages, readingDone) {
 }
 
 function displayLibrary() {
+  document.querySelectorAll("tbody tr").forEach(element => element.remove());
   library.forEach((book, index) => addBookToDisplay(book, index));
 }
 
@@ -25,9 +26,12 @@ function addBookToDisplay(book, index) {
   numberOfPagesElement.textContent = book.numberOfPages;
   statusElement.textContent = book.readingDone ? "READ" : "NOT READ";
   deleteButton.textContent = "DELETE";
-  deleteButton.classList.add("delete-button");
 
+  deleteButton.classList.add("delete-button");
+  deleteButton.dataset.index = index;
+  deleteButton.addEventListener("click", removeBookFromLibrary);
   deleteElement.appendChild(deleteButton);
+
   row.appendChild(titleElement);
   row.appendChild(authorElement);
   row.appendChild(numberOfPagesElement);
@@ -47,6 +51,12 @@ function addBookToLibrary(event) {
   addBookToDisplay(book, library.push(book) - 1);
   this.reset();
   this.classList.remove("active");
+}
+
+function removeBookFromLibrary() {
+  const index = this.dataset.index;
+  library.splice(index, 1);
+  displayLibrary();
 }
 
 let library = [];
