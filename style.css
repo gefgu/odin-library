@@ -125,6 +125,10 @@
   font-weight: 700;
 }
 
+.status-button:hover {
+  background-color: rgb(236, 236, 236);
+}
+
 #add-button:hover {
   background-color: #2cb4dd;
   border-color: #2cb4dd;
