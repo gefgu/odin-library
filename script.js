@@ -12,7 +12,7 @@ class Book {
 }
 
 function displayLibrary() {
-  document.querySelectorAll("tbody tr").forEach(element => element.remove());
+  document.querySelectorAll("tbody tr").forEach((element) => element.remove());
   library.forEach((book, index) => addBookToDisplay(book, index));
 }
 
@@ -56,7 +56,7 @@ function addBookToLibrary(event) {
     this.elements.title.value,
     this.elements.author.value,
     +this.elements.pages.value,
-    this.elements.status.value === "true" ? true : false,
+    this.elements.status.value === "true" ? true : false
   );
   addBookToDisplay(book, library.push(book) - 1);
   this.reset();
@@ -95,3 +95,14 @@ exitButton.addEventListener("click", () => {
   bookForm.classList.remove("active");
   bookForm.reset();
 });
+
+// Add form validation
+(() => {
+  const formTitleInput = bookForm.querySelector("#title");
+
+  formTitleInput.addEventListener("invalid", () => {
+    if (formTitleInput.value === "") {
+      formTitleInput.setCustomValidity("The book needs a title!");
+    }
+  });
+})();
