@@ -56,6 +56,10 @@
   display: block;
 }
 
+.new-book-form input:invalid {
+  border: 1px solid red;
+}
+
 .new-book-form input,
 .new-book-form select {
   margin-bottom: 24px;
