@@ -118,4 +118,11 @@ exitButton.addEventListener("click", () => {
   showCustomMessageForEmptyField(formTitleInput, "A book needs a title!");
   showCustomMessageForEmptyField(formAuthorInput, "A book needs an author!");
   showCustomMessageForEmptyField(formPagesInput, "A book needs pages!");
+
+  formPagesInput.addEventListener("input", () => {
+    console.log(formPagesInput.value);
+    if (formPagesInput.value <= 0) {
+      formPagesInput.setCustomValidity("A book needs a positive number of pages!");
+    }
+  });
 })();
