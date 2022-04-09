@@ -99,10 +99,23 @@ exitButton.addEventListener("click", () => {
 // Add form validation
 (() => {
   const formTitleInput = bookForm.querySelector("#title");
+  const formAuthorInput = bookForm.querySelector("#author");
+  const formPagesInput = bookForm.querySelector("#pages");
 
-  formTitleInput.addEventListener("invalid", () => {
-    if (formTitleInput.value === "") {
-      formTitleInput.setCustomValidity("The book needs a title!");
-    }
-  });
+  const showCustomMessageForEmptyField = (field, message) => {
+    field.addEventListener("input", () => {
+      field.setCustomValidity("");
+      field.checkValidity();
+    });
+
+    field.addEventListener("invalid", () => {
+      if (field.value === "") {
+        field.setCustomValidity(message);
+      }
+    });
+  };
+
+  showCustomMessageForEmptyField(formTitleInput, "A book needs a title!");
+  showCustomMessageForEmptyField(formAuthorInput, "A book needs an author!");
+  showCustomMessageForEmptyField(formPagesInput, "A book needs pages!");
 })();
