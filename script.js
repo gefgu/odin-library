@@ -1,3 +1,21 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDHXd7_Gb-EDaoWsnitWJ4FV1mVUIQdf8E",
+  authDomain: "odin-library-b0feb.firebaseapp.com",
+  projectId: "odin-library-b0feb",
+  storageBucket: "odin-library-b0feb.appspot.com",
+  messagingSenderId: "89926987302",
+  appId: "1:89926987302:web:7953dd13783ab9786f40e7",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 class Book {
   constructor(title, author, numberOfPages, read) {
     this.title = title;
@@ -122,7 +140,9 @@ exitButton.addEventListener("click", () => {
   formPagesInput.addEventListener("input", () => {
     console.log(formPagesInput.value);
     if (formPagesInput.value <= 0) {
-      formPagesInput.setCustomValidity("A book needs a positive number of pages!");
+      formPagesInput.setCustomValidity(
+        "A book needs a positive number of pages!"
+      );
     }
   });
 })();
