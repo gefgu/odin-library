@@ -1,22 +1,33 @@
 import "./style.css";
-
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDHXd7_Gb-EDaoWsnitWJ4FV1mVUIQdf8E",
-  authDomain: "odin-library-b0feb.firebaseapp.com",
-  projectId: "odin-library-b0feb",
-  storageBucket: "odin-library-b0feb.appspot.com",
-  messagingSenderId: "89926987302",
-  appId: "1:89926987302:web:7953dd13783ab9786f40e7",
-};
+// Firebase
+(() => {
+  async function signIn() {
+    const provider = new GoogleAuthProvider();
+    await signInWithPopup(getAuth(), provider);
+  }
+  function signOutUser() {
+    signOut(getAuth());
+  }
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+  const firebaseConfig = {
+    apiKey: "AIzaSyDHXd7_Gb-EDaoWsnitWJ4FV1mVUIQdf8E",
+    authDomain: "odin-library-b0feb.firebaseapp.com",
+    projectId: "odin-library-b0feb",
+    storageBucket: "odin-library-b0feb.appspot.com",
+    messagingSenderId: "89926987302",
+    appId: "1:89926987302:web:7953dd13783ab9786f40e7",
+  };
+
+  const app = initializeApp(firebaseConfig);
+})();
 
 class Book {
   constructor(title, author, numberOfPages, read) {
