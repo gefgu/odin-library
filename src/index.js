@@ -1,5 +1,6 @@
 import "./style.css";
 import { initializeApp } from "firebase/app";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import {
   getAuth,
   GoogleAuthProvider,
@@ -9,13 +10,23 @@ import {
 } from "firebase/auth";
 
 // Firebase
-(() => {
+const firebaseHelper = (() => {
   async function signIn() {
     const provider = new GoogleAuthProvider();
     await signInWithPopup(getAuth(), provider);
   }
   function signOutUser() {
     signOut(getAuth());
+  }
+  async function addBookToFirebase(book) {
+    try {
+      await addDoc(collection(getFirestore(), "library"), {
+        ...book,
+        userId: getAuth().currentUser.uid,
+      });
+    } catch (error) {
+      console.error("Error writing new message to Firebase Database", error);
+    }
   }
 
   const firebaseConfig = {
@@ -48,6 +59,10 @@ import {
       await signIn();
     }
   });
+
+  return {
+    addBookToFirebase,
+  };
 })();
 
 class Book {
@@ -102,7 +117,7 @@ function addBookToDisplay(book, index) {
   libraryTableBody.appendChild(row);
 }
 
-function addBookToLibrary(event) {
+async function addBookToLibrary(event) {
   event.preventDefault();
   const book = new Book(
     this.elements.title.value,
@@ -110,6 +125,7 @@ function addBookToLibrary(event) {
     +this.elements.pages.value,
     this.elements.status.value === "true" ? true : false
   );
+  await firebaseHelper.addBookToFirebase(book);
   addBookToDisplay(book, library.push(book) - 1);
   this.reset();
   this.classList.remove("active");
