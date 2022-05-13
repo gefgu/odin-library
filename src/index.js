@@ -1,6 +1,15 @@
 import "./style.css";
 import { initializeApp } from "firebase/app";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  getFirestore,
+  orderBy,
+  serverTimestamp,
+  query,
+  onSnapshot,
+  getDocs,
+} from "firebase/firestore";
 import {
   getAuth,
   GoogleAuthProvider,
@@ -8,6 +17,8 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
+
+const collectionName = "library";
 
 // Firebase
 const firebaseHelper = (() => {
@@ -20,12 +31,28 @@ const firebaseHelper = (() => {
   }
   async function addBookToFirebase(book) {
     try {
-      await addDoc(collection(getFirestore(), "library"), {
+      await addDoc(collection(getFirestore(), collectionName), {
         ...book,
+        timestamp: serverTimestamp(),
         userId: getAuth().currentUser.uid,
       });
     } catch (error) {
       console.error("Error writing new message to Firebase Database", error);
+    }
+  }
+  async function getBooksOfUser() {
+    if (isLogged) {
+      const booksQuery = query(
+        collection(getFirestore(), collectionName),
+        orderBy("timestamp", "desc")
+      );
+
+      const booksSnapshot = await getDocs(booksQuery);
+      const newLibrary = [];
+      booksSnapshot.forEach((element) => {
+        newLibrary.push(element.data());
+      });
+      return newLibrary;
     }
   }
 
@@ -41,10 +68,12 @@ const firebaseHelper = (() => {
   const app = initializeApp(firebaseConfig);
 
   let isLogged = false;
-  onAuthStateChanged(getAuth(), (user) => {
+  onAuthStateChanged(getAuth(), async (user) => {
     if (user) {
       isLogged = true;
       accountButton.textContent = `${user.displayName} - Log Out`;
+      library = await getBooksOfUser();
+      displayLibrary();
     } else {
       isLogged = false;
       accountButton.textContent = "Sign In";
@@ -62,6 +91,7 @@ const firebaseHelper = (() => {
 
   return {
     addBookToFirebase,
+    getBooksOfUser,
   };
 })();
 
@@ -142,16 +172,12 @@ function removeBookFromLibrary() {
   library.splice(index, 1);
   displayLibrary();
 }
-
+// Add event listeners
 let library = [];
 const libraryTableBody = document.querySelector(".library tbody");
 const bookForm = document.querySelector(".new-book-form");
 const addButton = document.querySelector("#add-button");
 const exitButton = document.querySelector(".exit");
-
-library.push(new Book("The Final Empire", "Brandon Sanderson", 541, true));
-library.push(new Book("The Well of Ascension", "Brandon Sanderson", 590, true));
-library.push(new Book("The Hero of Ages", "Brandon Sanderson", 572, false));
 
 displayLibrary();
 addButton.addEventListener("click", () => {
