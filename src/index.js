@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import {
   getAuth,
   GoogleAuthProvider,
+  onAuthStateChanged,
   signInWithPopup,
   signOut,
 } from "firebase/auth";
@@ -28,12 +29,24 @@ import {
 
   const app = initializeApp(firebaseConfig);
 
+  let isLogged = false;
+  onAuthStateChanged(getAuth(), (user) => {
+    if (user) {
+      isLogged = true;
+      accountButton.textContent = `${user.displayName} - Log Out`;
+    } else {
+      isLogged = false;
+      accountButton.textContent = "Sign In";
+    }
+  });
+
   const accountButton = document.querySelector(".account-button");
   accountButton.addEventListener("click", async () => {
-    await signIn();
-    accountButton.textContent = `${
-      getAuth().currentUser.displayName
-    } - Log Out`;
+    if (isLogged) {
+      signOutUser();
+    } else {
+      await signIn();
+    }
   });
 })();
 
