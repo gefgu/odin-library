@@ -27,6 +27,14 @@ import {
   };
 
   const app = initializeApp(firebaseConfig);
+
+  const accountButton = document.querySelector(".account-button");
+  accountButton.addEventListener("click", async () => {
+    await signIn();
+    accountButton.textContent = `${
+      getAuth().currentUser.displayName
+    } - Log Out`;
+  });
 })();
 
 class Book {

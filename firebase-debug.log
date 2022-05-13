@@ -1,32 +1,59 @@
-[debug] [2022-05-12T22:52:35.305Z] ----------------------------------------------------------------------
-[debug] [2022-05-12T22:52:35.307Z] Command:       /home/gefgu/.nvm/versions/node/v16.13.2/bin/node /home/gefgu/.nvm/versions/node/v16.13.2/bin/firebase serve --only hosting
-[debug] [2022-05-12T22:52:35.307Z] CLI Version:   10.9.2
-[debug] [2022-05-12T22:52:35.308Z] Platform:      linux
-[debug] [2022-05-12T22:52:35.308Z] Node Version:  v16.13.2
-[debug] [2022-05-12T22:52:35.308Z] Time:          Thu May 12 2022 19:52:35 GMT-0300 (Brasilia Standard Time)
-[debug] [2022-05-12T22:52:35.308Z] ----------------------------------------------------------------------
+[debug] [2022-05-12T22:58:36.956Z] ----------------------------------------------------------------------
+[debug] [2022-05-12T22:58:36.957Z] Command:       /home/gefgu/.nvm/versions/node/v16.13.2/bin/node /home/gefgu/.nvm/versions/node/v16.13.2/bin/firebase serve --only hosting
+[debug] [2022-05-12T22:58:36.958Z] CLI Version:   10.9.2
+[debug] [2022-05-12T22:58:36.958Z] Platform:      linux
+[debug] [2022-05-12T22:58:36.958Z] Node Version:  v16.13.2
+[debug] [2022-05-12T22:58:36.959Z] Time:          Thu May 12 2022 19:58:36 GMT-0300 (Brasilia Standard Time)
+[debug] [2022-05-12T22:58:36.959Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2022-05-12T22:52:35.399Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2022-05-12T22:52:35.400Z] > authorizing via signed-in user (gefgu12@gmail.com)
-[debug] [2022-05-12T22:52:35.400Z] [iam] checking project odin-library-b0feb for permissions ["firebase.projects.get"]
-[debug] [2022-05-12T22:52:35.402Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/odin-library-b0feb:testIamPermissions [none]
-[debug] [2022-05-12T22:52:35.402Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/odin-library-b0feb:testIamPermissions {"permissions":["firebase.projects.get"]}
-[debug] [2022-05-12T22:52:43.356Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/odin-library-b0feb:testIamPermissions 200
-[debug] [2022-05-12T22:52:43.358Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/odin-library-b0feb:testIamPermissions {"permissions":["firebase.projects.get"]}
-[debug] [2022-05-12T22:52:43.359Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb [none]
-[debug] [2022-05-12T22:52:44.451Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb 200
-[debug] [2022-05-12T22:52:44.452Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb {"projectId":"odin-library-b0feb","projectNumber":"89926987302","displayName":"odin-library","name":"projects/odin-library-b0feb","resources":{"hostingSite":"odin-library-b0feb"},"state":"ACTIVE"}
-[debug] [2022-05-12T22:52:44.453Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/odin-library-b0feb/sites 
-[debug] [2022-05-12T22:52:45.869Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/odin-library-b0feb/sites 200
-[debug] [2022-05-12T22:52:45.870Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/odin-library-b0feb/sites {"sites":[{"name":"projects/odin-library-b0feb/sites/odin-library-b0feb","defaultUrl":"https://odin-library-b0feb.web.app","type":"DEFAULT_SITE"}]}
-[debug] [2022-05-12T22:52:45.871Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb/webApps/-/config [none]
-[debug] [2022-05-12T22:52:47.499Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb/webApps/-/config 200
-[debug] [2022-05-12T22:52:47.500Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb/webApps/-/config {"projectId":"odin-library-b0feb","appId":"1:89926987302:web:7953dd13783ab9786f40e7","storageBucket":"odin-library-b0feb.appspot.com","apiKey":"AIzaSyDHXd7_Gb-EDaoWsnitWJ4FV1mVUIQdf8E","authDomain":"odin-library-b0feb.firebaseapp.com","messagingSenderId":"89926987302"}
+[debug] [2022-05-12T22:58:37.049Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-12T22:58:37.049Z] > authorizing via signed-in user (gefgu12@gmail.com)
+[debug] [2022-05-12T22:58:37.050Z] [iam] checking project odin-library-b0feb for permissions ["firebase.projects.get"]
+[debug] [2022-05-12T22:58:37.052Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/odin-library-b0feb:testIamPermissions [none]
+[debug] [2022-05-12T22:58:37.052Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/odin-library-b0feb:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-05-12T22:58:37.987Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/odin-library-b0feb:testIamPermissions 200
+[debug] [2022-05-12T22:58:37.987Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/odin-library-b0feb:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-05-12T22:58:37.990Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb [none]
+[debug] [2022-05-12T22:58:38.410Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb 200
+[debug] [2022-05-12T22:58:38.411Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb {"projectId":"odin-library-b0feb","projectNumber":"89926987302","displayName":"odin-library","name":"projects/odin-library-b0feb","resources":{"hostingSite":"odin-library-b0feb"},"state":"ACTIVE"}
+[debug] [2022-05-12T22:58:38.415Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/odin-library-b0feb/sites 
+[debug] [2022-05-12T22:58:39.762Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/odin-library-b0feb/sites 200
+[debug] [2022-05-12T22:58:39.764Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/odin-library-b0feb/sites {"sites":[{"name":"projects/odin-library-b0feb/sites/odin-library-b0feb","defaultUrl":"https://odin-library-b0feb.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2022-05-12T22:58:39.764Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb/webApps/-/config [none]
+[debug] [2022-05-12T22:58:40.471Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb/webApps/-/config 200
+[debug] [2022-05-12T22:58:40.472Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb/webApps/-/config {"projectId":"odin-library-b0feb","appId":"1:89926987302:web:7953dd13783ab9786f40e7","storageBucket":"odin-library-b0feb.appspot.com","apiKey":"AIzaSyDHXd7_Gb-EDaoWsnitWJ4FV1mVUIQdf8E","authDomain":"odin-library-b0feb.firebaseapp.com","messagingSenderId":"89926987302"}
 [info] i  hosting: Serving hosting files from: ./dist {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1m./dist\u001b[22m"}}
 [info] ✔  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
-[info] i  hosting: 127.0.0.1 - - [12/May/2022:22:54:38 +0000] "GET / HTTP/1.1" 200 2164 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [12/May/2022:22:54:38 +0000] \"GET / HTTP/1.1\" 200 2164 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0\""}}
-[info] i  hosting: 127.0.0.1 - - [12/May/2022:22:54:39 +0000] "GET /main.js HTTP/1.1" 200 640192 "http://localhost:5000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [12/May/2022:22:54:39 +0000] \"GET /main.js HTTP/1.1\" 200 640192 \"http://localhost:5000/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0\""}}
-[info] i  hosting: 127.0.0.1 - - [12/May/2022:22:55:39 +0000] "GET / HTTP/1.1" 200 2164 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [12/May/2022:22:55:39 +0000] \"GET / HTTP/1.1\" 200 2164 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0\""}}
-[info] i  hosting: 127.0.0.1 - - [12/May/2022:22:55:40 +0000] "GET /main.js HTTP/1.1" 200 640280 "http://localhost:5000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [12/May/2022:22:55:40 +0000] \"GET /main.js HTTP/1.1\" 200 640280 \"http://localhost:5000/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0\""}}
-[info] i  hosting: 127.0.0.1 - - [12/May/2022:22:56:08 +0000] "GET / HTTP/1.1" 200 2164 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [12/May/2022:22:56:08 +0000] \"GET / HTTP/1.1\" 200 2164 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0\""}}
-[info] i  hosting: 127.0.0.1 - - [12/May/2022:22:56:08 +0000] "GET /main.js HTTP/1.1" 200 640216 "http://localhost:5000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [12/May/2022:22:56:08 +0000] \"GET /main.js HTTP/1.1\" 200 640216 \"http://localhost:5000/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0\""}}
+[debug] [2022-05-13T22:26:31.156Z] ----------------------------------------------------------------------
+[debug] [2022-05-13T22:26:31.158Z] Command:       /home/gefgu/.nvm/versions/node/v16.13.2/bin/node /home/gefgu/.nvm/versions/node/v16.13.2/bin/firebase serve --only hosting
+[debug] [2022-05-13T22:26:31.158Z] CLI Version:   10.9.2
+[debug] [2022-05-13T22:26:31.158Z] Platform:      linux
+[debug] [2022-05-13T22:26:31.159Z] Node Version:  v16.13.2
+[debug] [2022-05-13T22:26:31.165Z] Time:          Fri May 13 2022 19:26:31 GMT-0300 (Brasilia Standard Time)
+[debug] [2022-05-13T22:26:31.165Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-13T22:26:31.252Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-13T22:26:31.252Z] > authorizing via signed-in user (gefgu12@gmail.com)
+[debug] [2022-05-13T22:26:31.252Z] [iam] checking project odin-library-b0feb for permissions ["firebase.projects.get"]
+[debug] [2022-05-13T22:26:31.254Z] > refreshing access token with scopes: []
+[debug] [2022-05-13T22:26:31.255Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-05-13T22:26:31.487Z] <<< HTTP RESPONSE 200 {"date":"Fri, 13 May 2022 22:26:31 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-05-13T22:26:31.510Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/odin-library-b0feb:testIamPermissions [none]
+[debug] [2022-05-13T22:26:31.510Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/odin-library-b0feb:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-05-13T22:26:32.485Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/odin-library-b0feb:testIamPermissions 200
+[debug] [2022-05-13T22:26:32.486Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/odin-library-b0feb:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-05-13T22:26:32.487Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb [none]
+[debug] [2022-05-13T22:26:32.890Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb 200
+[debug] [2022-05-13T22:26:32.891Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb {"projectId":"odin-library-b0feb","projectNumber":"89926987302","displayName":"odin-library","name":"projects/odin-library-b0feb","resources":{"hostingSite":"odin-library-b0feb"},"state":"ACTIVE"}
+[debug] [2022-05-13T22:26:32.894Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/odin-library-b0feb/sites 
+[debug] [2022-05-13T22:26:34.288Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/odin-library-b0feb/sites 200
+[debug] [2022-05-13T22:26:34.288Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/odin-library-b0feb/sites {"sites":[{"name":"projects/odin-library-b0feb/sites/odin-library-b0feb","defaultUrl":"https://odin-library-b0feb.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2022-05-13T22:26:34.289Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb/webApps/-/config [none]
+[debug] [2022-05-13T22:26:34.925Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb/webApps/-/config 200
+[debug] [2022-05-13T22:26:34.925Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/odin-library-b0feb/webApps/-/config {"projectId":"odin-library-b0feb","appId":"1:89926987302:web:7953dd13783ab9786f40e7","storageBucket":"odin-library-b0feb.appspot.com","apiKey":"AIzaSyDHXd7_Gb-EDaoWsnitWJ4FV1mVUIQdf8E","authDomain":"odin-library-b0feb.firebaseapp.com","messagingSenderId":"89926987302"}
+[info] i  hosting: Serving hosting files from: ./dist {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1m./dist\u001b[22m"}}
+[info] ✔  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: 127.0.0.1 - - [13/May/2022:22:26:36 +0000] "GET / HTTP/1.1" 200 2164 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [13/May/2022:22:26:36 +0000] \"GET / HTTP/1.1\" 200 2164 \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0\""}}
+[info] i  hosting: 127.0.0.1 - - [13/May/2022:22:26:37 +0000] "GET /main.js HTTP/1.1" 200 640264 "http://localhost:5000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [13/May/2022:22:26:37 +0000] \"GET /main.js HTTP/1.1\" 200 640264 \"http://localhost:5000/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0\""}}
+[info] i  hosting: 127.0.0.1 - - [13/May/2022:22:26:37 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:5000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [13/May/2022:22:26:37 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"http://localhost:5000/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0\""}}
