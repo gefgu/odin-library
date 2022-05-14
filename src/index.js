@@ -11,6 +11,7 @@ import {
   where,
   limit,
   updateDoc,
+  deleteDoc,
 } from "firebase/firestore";
 import {
   getAuth,
@@ -75,6 +76,17 @@ const firebaseHelper = (() => {
     await updateDoc(booksSnapshot.docs[0].ref, newBook);
   }
 
+  async function deleteBook(book) {
+    const bookQuery = query(
+      collection(getFirestore(), collectionName),
+      where("book.title", "==", book.title),
+      limit(1)
+    );
+
+    const booksSnapshot = await getDocs(bookQuery);
+    await deleteDoc(booksSnapshot.docs[0].ref);
+  }
+
   const firebaseConfig = {
     apiKey: "AIzaSyDHXd7_Gb-EDaoWsnitWJ4FV1mVUIQdf8E",
     authDomain: "odin-library-b0feb.firebaseapp.com",
@@ -113,7 +125,8 @@ const firebaseHelper = (() => {
   return {
     addBookToFirebase,
     getBooksOfUser,
-    updateBookData
+    updateBookData,
+    deleteBook,
   };
 })();
 
@@ -192,6 +205,7 @@ function toggleBookStatus() {
 
 function removeBookFromLibrary() {
   const index = this.parentNode.parentNode.dataset.index;
+  firebaseHelper.deleteBook(library[index]);
   library.splice(index, 1);
   displayLibrary();
 }
