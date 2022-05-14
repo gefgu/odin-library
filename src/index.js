@@ -214,7 +214,6 @@ exitButton.addEventListener("click", () => {
   showCustomMessageForEmptyField(formPagesInput, "A book needs pages!");
 
   formPagesInput.addEventListener("input", () => {
-    console.log(formPagesInput.value);
     if (formPagesInput.value <= 0) {
       formPagesInput.setCustomValidity(
         "A book needs a positive number of pages!"
