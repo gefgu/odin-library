@@ -51,8 +51,10 @@ const firebaseHelper = (() => {
       const booksSnapshot = await getDocs(booksQuery);
       const newLibrary = [];
       booksSnapshot.forEach((element) => {
-        console.log(element.data());
-        newLibrary.push(element.data().book);
+        const book = { ...element.data().book };
+        newLibrary.push(
+          new Book(book.title, book.author, book.numberOfPages, book.read)
+        );
       });
       return newLibrary;
     }
@@ -118,6 +120,7 @@ function displayLibrary() {
 }
 
 function addBookToDisplay(book, index) {
+  console.log(book);
   const row = document.createElement("tr");
   const titleElement = document.createElement("td");
   const authorElement = document.createElement("td");
