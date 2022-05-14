@@ -7,8 +7,8 @@ import {
   orderBy,
   serverTimestamp,
   query,
-  onSnapshot,
   getDocs,
+  where,
 } from "firebase/firestore";
 import {
   getAuth,
@@ -32,7 +32,7 @@ const firebaseHelper = (() => {
   async function addBookToFirebase(book) {
     try {
       await addDoc(collection(getFirestore(), collectionName), {
-        ...book,
+        book: { ...book },
         timestamp: serverTimestamp(),
         userId: getAuth().currentUser.uid,
       });
@@ -44,13 +44,15 @@ const firebaseHelper = (() => {
     if (isLogged) {
       const booksQuery = query(
         collection(getFirestore(), collectionName),
+        where("userId", "==", getAuth().currentUser.uid),
         orderBy("timestamp", "desc")
       );
 
       const booksSnapshot = await getDocs(booksQuery);
       const newLibrary = [];
       booksSnapshot.forEach((element) => {
-        newLibrary.push(element.data());
+        console.log(element.data());
+        newLibrary.push(element.data().book);
       });
       return newLibrary;
     }
@@ -77,6 +79,8 @@ const firebaseHelper = (() => {
     } else {
       isLogged = false;
       accountButton.textContent = "Sign In";
+      library = [];
+      displayLibrary();
     }
   });
 
