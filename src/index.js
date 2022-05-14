@@ -9,6 +9,8 @@ import {
   query,
   getDocs,
   where,
+  limit,
+  updateDoc,
 } from "firebase/firestore";
 import {
   getAuth,
@@ -17,6 +19,7 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
+import { async } from "@firebase/util";
 
 const collectionName = "library";
 
@@ -59,6 +62,18 @@ const firebaseHelper = (() => {
       return newLibrary;
     }
   }
+  async function updateBookData(book) {
+    const bookQuery = query(
+      collection(getFirestore(), collectionName),
+      where("book.title", "==", book.title),
+      limit(1)
+    );
+
+    const booksSnapshot = await getDocs(bookQuery);
+    let newBook = booksSnapshot.docs[0].data();
+    newBook.book = { ...book };
+    await updateDoc(booksSnapshot.docs[0].ref, newBook);
+  }
 
   const firebaseConfig = {
     apiKey: "AIzaSyDHXd7_Gb-EDaoWsnitWJ4FV1mVUIQdf8E",
@@ -98,6 +113,7 @@ const firebaseHelper = (() => {
   return {
     addBookToFirebase,
     getBooksOfUser,
+    updateBookData
   };
 })();
 
@@ -111,6 +127,7 @@ class Book {
 
   toggleStatus() {
     this.read = !this.read;
+    firebaseHelper.updateBookData(this);
   }
 }
 
@@ -120,7 +137,6 @@ function displayLibrary() {
 }
 
 function addBookToDisplay(book, index) {
-  console.log(book);
   const row = document.createElement("tr");
   const titleElement = document.createElement("td");
   const authorElement = document.createElement("td");
