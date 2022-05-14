@@ -20,7 +20,6 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import { async } from "@firebase/util";
 
 const collectionName = "library";
 
